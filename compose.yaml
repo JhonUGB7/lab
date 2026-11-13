@@ -1,0 +1,15 @@
+services:
+  kali:
+    image: kalilinux/kali-rolling
+    container_name: KaliCurso
+    tty: true
+    stdin_open: true
+    command: bash -c "apt update && sleep infinity"
+
+  openvas:
+    image: immauss/openvas
+    container_name: OpenVas
+    ports:
+      - "8080:9392"
+    environment:
+      PASSWORD: "0p3nv4s"
